@@ -144,13 +144,32 @@ h1 {
   border-bottom: 1px solid var(--line);
 }
 
-/* Postcard-style frame around the Notes from Home section only. */
+/* Rounded postcard frame around the Notes from Home section. */
 .journal-section {
+  position: relative;
   margin: 0 0 70px;
   padding: 48px;
   border: 1px solid var(--line);
-  outline: 1px dashed var(--sage);
-  outline-offset: -12px;
+  border-radius: 14px;
+}
+
+/* Minimal line-art stamp in the postcard's top-right corner. */
+.journal-section::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 42px;
+  height: 48px;
+  border: 1px solid var(--sage);
+  border-radius: 2px;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(155deg, transparent 47%, var(--sage) 48%, var(--sage) 50%, transparent 51%),
+    linear-gradient(25deg, transparent 48%, var(--sage) 49%, var(--sage) 51%, transparent 52%);
+  background-size: 26px 15px, 26px 15px;
+  background-position: center 18px, center 25px;
+  background-repeat: no-repeat;
 }
 
 h2 {
