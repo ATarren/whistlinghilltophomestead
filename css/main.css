@@ -144,6 +144,15 @@ h1 {
   border-bottom: 1px solid var(--line);
 }
 
+/* Postcard-style frame around the Notes from Home section only. */
+.journal-section {
+  margin: 0 0 70px;
+  padding: 48px;
+  border: 1px solid var(--line);
+  outline: 1px dashed var(--sage);
+  outline-offset: -12px;
+}
+
 h2 {
   margin: 0 0 18px;
   font-size: clamp(2rem, 4vw, 2.8rem);
@@ -192,5 +201,9 @@ footer {
   .hero {
     min-height: 0;
     padding: 60px 0;
+  }
+
+  .journal-section {
+    padding: 40px 28px;
   }
 }
