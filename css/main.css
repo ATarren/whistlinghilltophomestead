@@ -1,4 +1,10 @@
+/*
+  Site styles live here. Edit the values in :root to change the overall color palette.
+  Colors: --ink (main text), --muted (secondary text), --sage (links/accent),
+  --paper (page background), and --line (borders/dividers).
+*/
 * {
+  /* Include padding and borders in element widths to make layout sizing predictable. */
   box-sizing: border-box;
 }
 
@@ -10,10 +16,12 @@
   --line: #e4e2d9;
 }
 
+/* Smooth scrolling when a page link jumps to a section. */
 html {
   scroll-behavior: smooth;
 }
 
+/* Overall page width, text, and background. Change width for a wider/narrower desktop layout. */
 body {
   margin: 0 auto;
   width: min(70%, 920px);
@@ -24,6 +32,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Shared top bar: site name on the left, navigation on the right. */
 .site-header {
   display: flex;
   align-items: center;
@@ -33,6 +42,7 @@ body {
   border-bottom: 1px solid var(--line);
 }
 
+/* Homestead name in the header. */
 .site-name {
   color: var(--ink);
   font-family: Georgia, 'Times New Roman', serif;
@@ -40,6 +50,7 @@ body {
   font-weight: bold;
 }
 
+/* Navigation links and spacing. */
 nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -51,6 +62,7 @@ nav ul {
   font-weight: 600;
 }
 
+/* Default link color and hover appearance. */
 a {
   color: var(--sage);
   text-decoration: none;
@@ -61,6 +73,7 @@ a:hover {
   text-underline-offset: 4px;
 }
 
+/* Large homepage welcome area. Adjust min-height and padding to change its size. */
 .hero {
   min-height: 440px;
   display: flex;
@@ -71,6 +84,7 @@ a:hover {
   border-bottom: 1px solid var(--line);
 }
 
+/* Small uppercase section labels (eyebrows). */
 .eyebrow {
   margin: 0 0 16px;
   color: var(--sage);
@@ -80,11 +94,13 @@ a:hover {
   text-transform: uppercase;
 }
 
+/* Heading font shared by the main headline and section headings. */
 h1, h2 {
   font-family: Georgia, 'Times New Roman', serif;
   font-weight: 500;
 }
 
+/* Main homepage headline. clamp() scales the size with the screen width. */
 h1 {
   max-width: 760px;
   margin: 0;
@@ -93,6 +109,7 @@ h1 {
   line-height: 1.04;
 }
 
+/* Intro paragraph below the large headline. */
 .intro {
   max-width: 590px;
   margin: 24px 0 28px;
@@ -101,6 +118,7 @@ h1 {
   line-height: 1.7;
 }
 
+/* Call-to-action button on the hero section. */
 .button {
   display: inline-flex;
   align-items: center;
@@ -113,33 +131,39 @@ h1 {
   font-weight: 600;
 }
 
+/* Button colors while the pointer is over it. */
 .button:hover {
   color: white;
   background: var(--sage);
   text-decoration: none;
 }
 
+/* Width and spacing shared by the about and journal sections. */
 .content-section, .journal-section {
   max-width: 690px;
   padding: 70px 0;
 }
 
+/* Divider after the about section. */
 .content-section {
   border-bottom: 1px solid var(--line);
 }
 
+/* Section heading size and spacing. */
 h2 {
   margin: 0 0 18px;
   font-size: clamp(2rem, 4vw, 2.8rem);
   letter-spacing: -.025em;
 }
 
+/* Paragraphs inside the about and journal sections. */
 .content-section p:not(.eyebrow), .journal-section p:not(.eyebrow) {
   color: var(--muted);
   font-size: 1.05rem;
   line-height: 1.8;
 }
 
+/* Shared footer styling. */
 footer {
   padding: 20px 0 34px;
   border-top: 1px solid var(--line);
@@ -147,6 +171,7 @@ footer {
   font-size: .85rem;
 }
 
+/* Mobile layout: make the page use available width and stack the header elements. */
 @media (max-width: 700px) {
   body {
     width: auto;

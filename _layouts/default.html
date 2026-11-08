@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Character encoding and viewport settings keep text readable on phones and desktops. -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Change this sentence to update the short description used by search engines. -->
     <meta name="description" content="Welcome to Whistling Hilltop Homestead.">
+
+    <!-- Jekyll fills these in from this page's title and the site name in _config.yml. -->
     <title>{{ page.title }} | {{ site.name }}</title>
+
+    <!-- Main site styles. relative_url makes links work with GitHub Pages project sites too. -->
     <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}">
   </head>
   <body>
+    <!-- Shared header: change the navigation labels and destinations here. -->
     <header class="site-header">
+      <!-- The site name comes from _config.yml; clicking it returns to the homepage. -->
       <a class="site-name" href="{{ '/' | relative_url }}">{{ site.name }}</a>
       <nav aria-label="Main navigation">
         <ul>
+          <!-- These links point to sections on the homepage; keep their IDs in sync with index.html. -->
           <li><a href="{{ '/' | relative_url }}">Home</a></li>
           <li><a href="{{ '/#homestead' | relative_url }}">Our Homestead</a></li>
           <li><a href="{{ '/#journal' | relative_url }}">Journal</a></li>
         </ul>
       </nav>
     </header>
+
+    <!-- Jekyll inserts each page's content where this placeholder appears. -->
     <main class="container">
       {{ content }}
     </main>
+
+    <!-- Shared footer shown at the bottom of every page; edit its text here. -->
     <footer>
       <p>Whistling Hilltop Homestead</p>
     </footer>
