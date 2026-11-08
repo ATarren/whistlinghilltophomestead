@@ -1,0 +1,3 @@
+name: Whistling Hilltop Homestead
+markdown: kramdown
+permalink: /journal/:year/:month/:day/:title/

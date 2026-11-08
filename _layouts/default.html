@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Welcome to Whistling Hilltop Homestead.">
+    <title>{{ page.title }} | {{ site.name }}</title>
+    <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-name" href="{{ '/' | relative_url }}">{{ site.name }}</a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/#homestead' | relative_url }}">Our Homestead</a></li>
+          <li><a href="{{ '/#journal' | relative_url }}">Journal</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      {{ content }}
+    </main>
+    <footer>
+      <p>Whistling Hilltop Homestead</p>
+    </footer>
+  </body>
+</html>
