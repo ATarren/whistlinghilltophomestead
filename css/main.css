@@ -232,6 +232,35 @@ h2 {
   margin-inline: auto;
 }
 
+/* Desktop: let the text, photo and button share the hero grid so the
+   "Come on in" button is centered under the whole hero, not just the text column. */
+@media (min-width: 701px) {
+  .hero {
+    row-gap: 0;
+  }
+
+  .hero .section-copy {
+    display: contents;
+  }
+
+  .hero .eyebrow,
+  .hero h1,
+  .hero .intro {
+    grid-column: 1;
+  }
+
+  .hero .round-photo {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+  }
+
+  .hero .button {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin: 0;
+  }
+}
+
 .content-section, .journal-section, .contact-section {
   max-width: none;
   padding: 70px 0;
