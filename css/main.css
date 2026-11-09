@@ -155,11 +155,6 @@ h1 {
   padding: 70px 0;
 }
 
-.content-section {
-  border-bottom: 1px solid var(--line);
-}
-
-/* Rounded postcard frame around the Notes from Home section. */
 .journal-section {
   position: relative;
   margin: 0 -48px 70px;
@@ -169,7 +164,6 @@ h1 {
   background: rgba(255, 255, 255, 0.12);
 }
 
-/* Minimal line-art stamp in the postcard's top-right corner. */
 .journal-section::after {
   content: "";
   position: absolute;
@@ -186,6 +180,10 @@ h1 {
   background-size: 26px 15px, 26px 15px;
   background-position: center 18px, center 25px;
   background-repeat: no-repeat;
+}
+
+.content-section {
+  border-bottom: 1px solid var(--line);
 }
 
 h2 {
