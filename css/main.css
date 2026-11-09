@@ -203,6 +203,11 @@ h2 {
   background: rgba(255, 255, 255, 0.12);
 }
 
+/* Reserve room so the decorative stamp never sits on top of postcard text. */
+.journal-section .section-copy {
+  padding-right: 64px;
+}
+
 .journal-section::after {
   content: "";
   position: absolute;
@@ -386,6 +391,10 @@ footer {
   .journal-section {
     margin-inline: 0;
     padding: 40px 28px;
+  }
+
+  .journal-section .section-copy {
+    padding: 56px 0 0;
   }
 
   .postcard-detail {
