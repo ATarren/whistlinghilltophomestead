@@ -1,6 +1,13 @@
 ---
 layout: default
 ---
+<style>
+  /* On postcard pages, confine the map background to the shared site header. */
+  body::before,
+  body::after {
+    height: var(--postcard-map-height, 220px) !important;
+  }
+</style>
 <section class="journal-section photo-section postcard-detail" aria-labelledby="postcard-title">
   <div class="section-copy">
     <p class="eyebrow">Postcard · {{ page.date | date: "%B %-d, %Y" }}</p>
@@ -12,3 +19,23 @@ layout: default
   </div>
   <img class="round-photo" src="{{ page.image | relative_url }}" alt="{{ page.image_alt }}">
 </section>
+<script>
+  // Measure the shared header so the map ends exactly at its bottom on every viewport.
+  (function () {
+    var header = document.querySelector('.site-header');
+    if (!header) return;
+
+    function setPostcardMapHeight() {
+      var headerBottom = header.getBoundingClientRect().bottom + window.pageYOffset;
+      document.body.style.setProperty('--postcard-map-height', Math.ceil(headerBottom) + 'px');
+    }
+
+    setPostcardMapHeight();
+    window.addEventListener('load', setPostcardMapHeight);
+    window.addEventListener('resize', setPostcardMapHeight);
+    window.addEventListener('orientationchange', setPostcardMapHeight);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(setPostcardMapHeight);
+    }
+  })();
+</script>
