@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
 :root {
-  --ink: #292d24;
-  --muted: #6d7165;
-  --sage: #66745a;
-  --paper: #fbfaf6;
-  --line: #e4e2d9;
+  --ink: #2e2a27;
+  --muted: #655d55;
+  --sage: #72775d;
+  --paper: #f5f1ea;
+  --line: #dcd1c3;
+  --accent: #a77c62;
+  --accent-deep: #6d5447;
+  --soft-rose: #efe0d5;
 }
 
 html {
@@ -16,12 +21,13 @@ html {
 
 body {
   margin: 0 auto;
-  width: min(70%, 920px);
+  width: min(72%, 1000px);
   min-width: 320px;
   color: var(--ink);
   background: var(--paper);
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
 }
 
 .site-header {
@@ -35,9 +41,10 @@ body {
 
 .site-name {
   color: var(--ink);
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.15rem;
-  font-weight: bold;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: .04em;
 }
 
 nav ul {
@@ -47,8 +54,10 @@ nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: .9rem;
+  font-size: .8rem;
   font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
 
 a {
@@ -86,53 +95,58 @@ a:hover {
   border-radius: 50%;
   object-fit: cover;
   object-position: center center;
+  border: 1px solid rgba(107, 90, 66, 0.25);
 }
 
 .eyebrow {
   margin: 0 0 16px;
   color: var(--sage);
-  font-size: .78rem;
+  font-size: .76rem;
   font-weight: 700;
-  letter-spacing: .14em;
+  letter-spacing: .18em;
   text-transform: uppercase;
 }
 
 h1, h2 {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 500;
+  color: var(--ink);
 }
 
 h1 {
   max-width: 760px;
   margin: 0;
-  font-size: clamp(2.8rem, 7vw, 5.2rem);
-  letter-spacing: -.045em;
-  line-height: 1.04;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  letter-spacing: -.03em;
+  line-height: .95;
 }
 
 .intro {
   max-width: 590px;
   margin: 24px 0 28px;
   color: var(--muted);
-  font-size: 1.15rem;
-  line-height: 1.7;
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 17px;
-  border: 1px solid var(--sage);
-  border-radius: 2px;
-  color: var(--sage);
-  font-size: .9rem;
-  font-weight: 600;
+  padding: 12px 18px;
+  border: 1px solid var(--accent-deep);
+  border-radius: 999px;
+  color: var(--accent-deep);
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .button:hover {
-  color: white;
-  background: var(--sage);
+  color: #fffaf6;
+  background: var(--accent-deep);
   text-decoration: none;
 }
 
@@ -145,13 +159,14 @@ h1 {
   border-bottom: 1px solid var(--line);
 }
 
-/* Wider postcard frame keeps its photo aligned with the other section photos. */
+/* Rounded postcard frame around the Notes from Home section. */
 .journal-section {
   position: relative;
   margin: 0 -48px 70px;
   padding: 48px;
   border: 1px solid var(--line);
   border-radius: 14px;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 /* Minimal line-art stamp in the postcard's top-right corner. */
@@ -175,13 +190,13 @@ h1 {
 
 h2 {
   margin: 0 0 18px;
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-size: clamp(2.2rem, 4vw, 3rem);
   letter-spacing: -.025em;
 }
 
 .content-section p:not(.eyebrow), .journal-section p:not(.eyebrow) {
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 1.04rem;
   line-height: 1.8;
 }
 
@@ -189,7 +204,7 @@ footer {
   padding: 20px 0 34px;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: .85rem;
+  font-size: .82rem;
 }
 
 @media (max-width: 700px) {
