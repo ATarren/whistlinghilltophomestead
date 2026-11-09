@@ -32,7 +32,6 @@
   --accent: #a77c62;
   --accent-deep: #6d5447;
   --soft-rose: #efe0d5;
-  --map-back: #e8ebe2;
 }
 
 html {
@@ -61,7 +60,7 @@ body::before {
   width: 100vw;
   height: 560px;
   transform: translateX(-50%);
-  background: var(--map-back);
+  background: #eaf1e4;
   pointer-events: none;
 }
 
@@ -79,7 +78,7 @@ body::after {
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.46;
-  filter: hue-rotate(-20deg) saturate(1.2) brightness(1.05);
+  filter: saturate(0.85) brightness(1.02);
   pointer-events: none;
 }
 
