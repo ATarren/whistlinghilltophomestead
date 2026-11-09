@@ -7,3 +7,5 @@ baseurl: /whistlinghilltophomestead
 markdown: kramdown
 # URL format for posts placed in the _posts folder. Change only if you want a different post URL structure.
 permalink: /journal/:year/:month/:day/:title/
+# Publish dated posts immediately, including posts dated slightly in the future.
+future: true
