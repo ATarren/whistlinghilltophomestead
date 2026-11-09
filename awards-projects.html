@@ -4,6 +4,18 @@ title: Awards & Projects
 permalink: /awards-projects/
 ---
 <style>
+  /* End the map graphic at the divider line above the first project.
+     --map-height is measured by the script below so it matches on iPhone and desktop. */
+  body::before,
+  body::after {
+    height: var(--map-height, 480px) !important;
+  }
+
+  body::after {
+    background-size: cover !important;
+    background-position: center top !important;
+  }
+
   .projects-page {
     padding: 64px 0 48px;
   }
@@ -167,3 +179,24 @@ permalink: /awards-projects/
     </li>
   </ul>
 </section>
+
+<script>
+  // Stop the map graphic exactly at the line above the first project.
+  (function () {
+    var list = document.querySelector('.project-list');
+    if (!list) return;
+
+    function setMapHeight() {
+      var top = list.getBoundingClientRect().top + window.pageYOffset;
+      document.body.style.setProperty('--map-height', Math.round(top + 1) + 'px');
+    }
+
+    setMapHeight();
+    window.addEventListener('load', setMapHeight);
+    window.addEventListener('resize', setMapHeight);
+    window.addEventListener('orientationchange', setMapHeight);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(setMapHeight);
+    }
+  })();
+</script>
