@@ -7,6 +7,15 @@
     <title>{{ page.title }} | {{ site.name }}</title>
     <link rel="icon" type="image/svg+xml" href="{{ '/images/sprout.svg' | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}?v=20261109e">
+    {% if page.url == '/' %}
+    <style>
+      /* Give the homepage hero copy a little more room inside the map background. */
+      body::before,
+      body::after {
+        height: 620px;
+      }
+    </style>
+    {% endif %}
   </head>
   <body>
     <header class="site-header">
