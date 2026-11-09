@@ -6,13 +6,15 @@
     <meta name="description" content="Welcome to Whistling Hilltop Homestead.">
     <title>{{ page.title }} | {{ site.name }}</title>
     <link rel="icon" type="image/svg+xml" href="{{ '/images/sprout.svg' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}?v=20261109e">
+    <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}?v=20261109f">
     {% if page.url == '/' %}
     <style>
-      /* Give the homepage hero copy a little more room inside the map background. */
+      /* Homepage: the map ends in the gap between the intro text and the
+         "Come on in" button. --map-height is measured by the script below
+         so it fits on both desktop and mobile. */
       body::before,
       body::after {
-        height: 620px;
+        height: var(--map-height, 590px);
       }
     </style>
     {% endif %}
@@ -38,5 +40,32 @@
       <p>Whistling Hilltop Homestead</p>
       <p><a href="mailto:easthillhomestead60@gmail.com">easthillhomestead60@gmail.com</a></p>
     </footer>
+    {% if page.url == '/' %}
+    <script>
+      // End the map just below "We're glad you're here." and above the "Come on in" button.
+      (function () {
+        var intro = document.querySelector('.hero .intro');
+        var button = document.querySelector('.hero .button');
+        if (!intro || !button) return;
+
+        function setMapHeight() {
+          var introBottom = intro.getBoundingClientRect().bottom + window.pageYOffset;
+          var buttonTop = button.getBoundingClientRect().top + window.pageYOffset;
+          var gap = buttonTop - introBottom;
+          // Land in the gap, closer to the text so the button stays on plain background.
+          var offset = gap > 24 ? Math.min(gap * 0.4, 20) : Math.max(gap / 2, 0);
+          document.body.style.setProperty('--map-height', Math.round(introBottom + offset) + 'px');
+        }
+
+        setMapHeight();
+        window.addEventListener('load', setMapHeight);
+        window.addEventListener('resize', setMapHeight);
+        window.addEventListener('orientationchange', setMapHeight);
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(setMapHeight);
+        }
+      })();
+    </script>
+    {% endif %}
   </body>
 </html>
