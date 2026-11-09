@@ -70,7 +70,6 @@ a:hover {
   text-underline-offset: 4px;
 }
 
-/* Give all three sections identical image columns and spacing. */
 .photo-section {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 300px;
@@ -109,7 +108,7 @@ a:hover {
 
 h1, h2 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--ink);
 }
 
@@ -118,7 +117,14 @@ h1 {
   margin: 0;
   font-size: clamp(2.8rem, 6vw, 5rem);
   letter-spacing: -.03em;
-  line-height: .95;
+  line-height: 0.88;
+}
+
+h2 {
+  margin: 0 0 18px;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  letter-spacing: -.025em;
+  line-height: 0.82;
 }
 
 .intro {
@@ -155,6 +161,10 @@ h1 {
   padding: 70px 0;
 }
 
+.content-section {
+  border-bottom: 1px solid var(--line);
+}
+
 .journal-section {
   position: relative;
   margin: 0 -48px 70px;
@@ -180,16 +190,6 @@ h1 {
   background-size: 26px 15px, 26px 15px;
   background-position: center 18px, center 25px;
   background-repeat: no-repeat;
-}
-
-.content-section {
-  border-bottom: 1px solid var(--line);
-}
-
-h2 {
-  margin: 0 0 18px;
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  letter-spacing: -.025em;
 }
 
 .content-section p:not(.eyebrow), .journal-section p:not(.eyebrow) {
