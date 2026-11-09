@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'Forest Home Serif';
+  src: url('https://raw.githubusercontent.com/ATarren/whistlinghilltophomestead/main/ForestHomeSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Forest Home Serif';
+  src: url('https://raw.githubusercontent.com/ATarren/whistlinghilltophomestead/main/ForestHomeSerif-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Forest Home Serif';
+  src: url('https://raw.githubusercontent.com/ATarren/whistlinghilltophomestead/main/ForestHomeSerif-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -11,6 +34,7 @@
   --accent: #a77c62;
   --accent-deep: #6d5447;
   --soft-rose: #efe0d5;
+  --map-back: #e8ebe2;
 }
 
 html {
@@ -24,7 +48,7 @@ body {
   min-width: 320px;
   color: var(--ink);
   background: var(--paper);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Lora', Georgia, serif;
   -webkit-font-smoothing: antialiased;
   line-height: 1.7;
   isolation: isolate;
@@ -39,7 +63,7 @@ body::before {
   width: 100vw;
   height: 560px;
   transform: translateX(-50%);
-  background: #eaf1e4;
+  background: var(--map-back);
   pointer-events: none;
 }
 
@@ -57,7 +81,7 @@ body::after {
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.46;
-  filter: saturate(0.85) brightness(1.02);
+  filter: hue-rotate(-20deg) saturate(1.2) brightness(1.05);
   pointer-events: none;
 }
 
@@ -72,7 +96,7 @@ body::after {
 
 .site-name {
   color: var(--ink);
-  font-family: Georgia, serif;
+  font-family: 'Forest Home Serif', Georgia, serif;
   font-size: 1.45rem;
   font-weight: 700;
   letter-spacing: .04em;
@@ -85,7 +109,7 @@ nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  font-family: Georgia, serif;
+  font-family: 'Forest Home Serif', Georgia, serif;
   font-size: .8rem;
   font-weight: 700;
   letter-spacing: .08em;
@@ -139,7 +163,7 @@ a:hover {
 }
 
 h1, h2 {
-  font-family: Georgia, serif;
+  font-family: 'Forest Home Serif', Georgia, serif;
   font-weight: 700;
   color: var(--ink);
 }
