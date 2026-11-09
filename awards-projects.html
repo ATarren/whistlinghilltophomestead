@@ -40,18 +40,14 @@ permalink: /awards-projects/
     border-bottom: 1px solid var(--line);
   }
 
-  .project-image-placeholder {
-    display: grid;
-    place-items: center;
+  .project-image {
+    display: block;
     width: 64px;
     height: 64px;
     border: 1px solid var(--line);
     border-radius: 50%;
-    background: var(--soft-rose);
-    color: var(--sage);
-    font-family: 'Forest Home Serif', Georgia, serif;
-    font-size: .68rem;
-    text-align: center;
+    object-fit: cover;
+    object-position: center;
   }
 
   .project-copy {
@@ -110,10 +106,9 @@ permalink: /awards-projects/
       align-items: start;
     }
 
-    .project-image-placeholder {
+    .project-image {
       width: 54px;
       height: 54px;
-      font-size: .62rem;
     }
 
     .project-status {
@@ -127,11 +122,11 @@ permalink: /awards-projects/
 <section class="projects-page" aria-labelledby="projects-title">
   <p class="eyebrow">Growing together</p>
   <h1 id="projects-title">Awards &amp; Projects</h1>
-  <p class="projects-intro">A few milestones, shared efforts, and ideas taking root at Whistling Hilltop Homestead. Photos and award images can be added to the circles as they’re ready.</p>
+  <p class="projects-intro">A few milestones, shared efforts, and ideas taking root at Whistling Hilltop Homestead.</p>
 
   <ul class="project-list">
     <li class="project-item">
-      <div class="project-image-placeholder" aria-hidden="true">Image<br>coming soon</div>
+      <img class="project-image" src="{{ '/images/MCC.jpeg' | relative_url }}" alt="Mass Cultural Council grant image">
       <div class="project-copy">
         <h2>Mass Cultural Arts Grant</h2>
         <p>The Mass Cultural Council awarded us a small grant to support our homesteading and community culture-building events and activities.</p>
@@ -140,7 +135,7 @@ permalink: /awards-projects/
     </li>
 
     <li class="project-item">
-      <div class="project-image-placeholder" aria-hidden="true">Image<br>coming soon</div>
+      <img class="project-image" src="{{ '/images/chilli.jpeg' | relative_url }}" alt="Peppers grown for the Hadley Chili Competition">
       <div class="project-copy">
         <h2>Hadley Chili Competition</h2>
         <p>Charlie and Paul grew all the peppers and vegetables for their entry—and won by a landslide among fifteen entries from neighboring towns.</p>
@@ -149,7 +144,7 @@ permalink: /awards-projects/
     </li>
 
     <li class="project-item">
-      <div class="project-image-placeholder" aria-hidden="true">Image<br>coming soon</div>
+      <img class="project-image" src="{{ '/images/team.jpeg' | relative_url }}" alt="The Whistling Hilltop team">
       <div class="project-copy">
         <h2>A Kitchen Garden Cohort</h2>
         <p>We’re building a lawn-to-kitchen-garden homesteading cohort, partnering with three to five families to meet quarterly, share knowledge, and create small networks of support across our diverse community.</p>
@@ -158,7 +153,7 @@ permalink: /awards-projects/
     </li>
 
     <li class="project-item">
-      <div class="project-image-placeholder" aria-hidden="true">Image<br>coming soon</div>
+      <img class="project-image" src="{{ '/images/wheel.jpeg' | relative_url }}" alt="A wheel used in a Whistling Hilltop workshop">
       <div class="project-copy">
         <h2>Workshops &amp; Casual Events</h2>
         <p>A short list of gatherings at Whistling Hilltop and with our neighbors.</p>
