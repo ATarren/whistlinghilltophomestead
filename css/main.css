@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
 @font-face {
   font-family: 'Forest Home Serif';
   src: url('https://raw.githubusercontent.com/ATarren/whistlinghilltophomestead/main/ForestHomeSerif-Regular.ttf') format('truetype');
@@ -46,7 +48,7 @@ body {
   min-width: 320px;
   color: var(--ink);
   background: var(--paper);
-  font-family: 'Forest Home Serif', Georgia, serif;
+  font-family: 'Lora', Georgia, serif;
   -webkit-font-smoothing: antialiased;
   line-height: 1.7;
   isolation: isolate;
