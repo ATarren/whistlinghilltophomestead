@@ -59,16 +59,6 @@ body::after {
   pointer-events: none;
 }
 
-.site-header::before {
-  top: 0;
-  height: 100%;
-}
-
-.hero::before {
-  top: 0;
-  height: 100%;
-}
-
 .site-header {
   display: flex;
   align-items: center;
