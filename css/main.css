@@ -106,6 +106,29 @@ a:hover {
   text-transform: uppercase;
 }
 
+.hero .section-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero .section-copy h1 {
+  order: 1;
+}
+
+.hero .section-copy .eyebrow {
+  order: 2;
+  margin: 16px 0 0;
+}
+
+.hero .section-copy .intro {
+  order: 3;
+}
+
+.hero .section-copy .button {
+  order: 4;
+  align-self: flex-start;
+}
+
 h1, h2 {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 700;
