@@ -1,0 +1,26 @@
+---
+layout: default
+title: Past Postcards
+permalink: /past-postcards/
+---
+<section class="past-postcards archive-page">
+  <p class="eyebrow">From the homestead</p>
+  <h1>Past Postcards</h1>
+  <p class="archive-intro">A collection of moments, seasons, and stories from our homestead.</p>
+
+  {% if site.posts.size > 0 %}
+    {% for postcard in site.posts %}
+    <article class="journal-section photo-section archived-postcard">
+      <div class="section-copy">
+        <p class="eyebrow">{{ postcard.date | date: "%B %-d, %Y" }}</p>
+        <h2><a href="{{ postcard.url | relative_url }}">{{ postcard.title }}</a></h2>
+        <p>{{ postcard.excerpt | strip_html }}</p>
+        <a class="button" href="{{ postcard.url | relative_url }}">Read this postcard</a>
+      </div>
+      <img class="round-photo" src="{{ postcard.image | relative_url }}" alt="{{ postcard.image_alt }}">
+    </article>
+    {% endfor %}
+  {% else %}
+    <p class="archive-empty">There are no postcards yet. Check back soon.</p>
+  {% endif %}
+</section>

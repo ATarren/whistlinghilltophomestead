@@ -35,25 +35,8 @@ title: Welcome
 </section>
 {% endif %}
 
-<section class="past-postcards" id="past-postcards">
-  <p class="eyebrow">From the homestead</p>
-  <h2>Past Postcards</h2>
-  {% assign archived_postcards = site.posts | slice: 1, site.posts.size %}
-  {% if archived_postcards.size > 0 %}
-    {% for postcard in archived_postcards %}
-    <article class="journal-section photo-section archived-postcard">
-      <div class="section-copy">
-        <p class="eyebrow">{{ postcard.date | date: "%B %-d, %Y" }}</p>
-        <h2><a href="{{ postcard.url | relative_url }}">{{ postcard.title }}</a></h2>
-        <p>{{ postcard.excerpt | strip_html }}</p>
-        <a class="button" href="{{ postcard.url | relative_url }}">Read this postcard</a>
-      </div>
-      <img class="round-photo" src="{{ postcard.image | relative_url }}" alt="{{ postcard.image_alt }}">
-    </article>
-    {% endfor %}
-  {% else %}
-    <p class="archive-empty">Older postcards will appear here automatically when you publish a new one.</p>
-  {% endif %}
+<section class="past-postcards-link" aria-label="Postcard archive">
+  <a class="button" href="{{ '/past-postcards/' | relative_url }}">Browse Past Postcards</a>
 </section>
 
 <section class="contact-section" id="contact">
