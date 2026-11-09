@@ -7,11 +7,52 @@
     <title>{{ page.title }} | {{ site.name }}</title>
     <link rel="icon" type="image/svg+xml" href="{{ '/images/sprout.svg' | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}?v=20261109f">
+    <style>
+      /* Fade the map into the paper color behind the site name and navigation. */
+      body::before {
+        background: linear-gradient(
+          to bottom,
+          var(--paper) 0%,
+          var(--paper) 12%,
+          rgba(245, 241, 234, .92) 28%,
+          rgba(232, 235, 226, .96) 58%,
+          var(--map-back) 100%
+        );
+      }
+
+      body::after {
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba(0, 0, 0, .12) 16%,
+          rgba(0, 0, 0, .55) 42%,
+          #000 68%
+        );
+        mask-image: linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba(0, 0, 0, .12) 16%,
+          rgba(0, 0, 0, .55) 42%,
+          #000 68%
+        );
+      }
+
+      @media (max-width: 700px) {
+        body::before {
+          background: linear-gradient(
+            to bottom,
+            var(--paper) 0%,
+            var(--paper) 10%,
+            rgba(245, 241, 234, .92) 28%,
+            rgba(232, 235, 226, .96) 58%,
+            var(--map-back) 100%
+          );
+        }
+      }
+    </style>
     {% if page.url == '/' %}
     <style>
-      /* Homepage: the map ends in the gap between the intro text and the
-         "Come on in" button. --map-height is measured by the script below
-         so it fits on both desktop and mobile. */
+      /* Homepage: the map ends between the intro text and the button. */
       body::before,
       body::after {
         height: var(--map-height, 590px);
@@ -42,7 +83,7 @@
     </footer>
     {% if page.url == '/' %}
     <script>
-      // End the map just below "We're glad you're here." and above the "Come on in" button.
+      // End the map in the gap between the welcome text and the "Come on in" button.
       (function () {
         var intro = document.querySelector('.hero .intro');
         var button = document.querySelector('.hero .button');
@@ -52,7 +93,6 @@
           var introBottom = intro.getBoundingClientRect().bottom + window.pageYOffset;
           var buttonTop = button.getBoundingClientRect().top + window.pageYOffset;
           var gap = buttonTop - introBottom;
-          // Land in the gap, closer to the text so the button stays on plain background.
           var offset = gap > 24 ? Math.min(gap * 0.4, 20) : Math.max(gap / 2, 0);
           document.body.style.setProperty('--map-height', Math.round(introBottom + offset) + 'px');
         }
