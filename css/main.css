@@ -31,6 +31,7 @@
   --line: #dcd1c3;
   --accent: #a77c62;
   --accent-deep: #6d5447;
+  --sage-deep: #55603f;
   --soft-rose: #efe0d5;
   --map-back: #e8ebe2;
 }
@@ -199,9 +200,9 @@ h2 {
   align-items: center;
   gap: 12px;
   padding: 12px 18px;
-  border: 1px solid var(--accent-deep);
+  border: 1px solid var(--sage-deep);
   border-radius: 999px;
-  color: var(--accent-deep);
+  color: var(--sage-deep);
   font: inherit;
   font-size: .82rem;
   font-weight: 700;
@@ -213,8 +214,14 @@ h2 {
 
 .button:hover {
   color: #fffaf6;
-  background: var(--accent-deep);
+  background: var(--sage-deep);
   text-decoration: none;
+}
+
+.hero .button {
+  display: flex;
+  width: fit-content;
+  margin-inline: auto;
 }
 
 .content-section, .journal-section, .contact-section {
