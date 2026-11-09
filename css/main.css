@@ -46,7 +46,7 @@ body {
   min-width: 320px;
   color: var(--ink);
   background: var(--paper);
-  font-family: 'Manrope', 'Segoe UI', sans-serif;
+  font-family: 'Forest Home Serif', Georgia, serif;
   -webkit-font-smoothing: antialiased;
   line-height: 1.7;
   isolation: isolate;
