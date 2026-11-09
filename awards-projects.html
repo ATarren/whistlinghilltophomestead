@@ -1,0 +1,174 @@
+---
+layout: default
+title: Awards & Projects
+permalink: /awards-projects/
+---
+<style>
+  .projects-page {
+    padding: 64px 0 48px;
+  }
+
+  .projects-page > .eyebrow {
+    margin-bottom: 12px;
+  }
+
+  .projects-page > h1 {
+    margin-bottom: 14px;
+  }
+
+  .projects-intro {
+    max-width: 650px;
+    margin: 0 0 34px;
+    color: var(--muted);
+    font-size: 1.04rem;
+    line-height: 1.8;
+  }
+
+  .project-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--line);
+  }
+
+  .project-item {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .project-image-placeholder {
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--soft-rose);
+    color: var(--sage);
+    font-family: 'Forest Home Serif', Georgia, serif;
+    font-size: .68rem;
+    text-align: center;
+  }
+
+  .project-copy {
+    min-width: 0;
+  }
+
+  .project-copy h2 {
+    margin: 0 0 5px;
+    font-size: clamp(1.45rem, 2.5vw, 1.8rem);
+    line-height: 1.05;
+  }
+
+  .project-copy p {
+    margin: 0;
+    color: var(--muted);
+    font-size: .96rem;
+    line-height: 1.65;
+  }
+
+  .project-status {
+    justify-self: end;
+    padding: 6px 11px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--sage);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-align: center;
+  }
+
+  .project-events {
+    margin: 10px 0 0;
+    padding-left: 1.2em;
+    color: var(--muted);
+    font-size: .93rem;
+    line-height: 1.75;
+  }
+
+  .project-events li + li {
+    margin-top: 5px;
+  }
+
+  .project-events strong {
+    color: var(--ink);
+  }
+
+  @media (max-width: 600px) {
+    .projects-page {
+      padding-top: 44px;
+    }
+
+    .project-item {
+      grid-template-columns: 54px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .project-image-placeholder {
+      width: 54px;
+      height: 54px;
+      font-size: .62rem;
+    }
+
+    .project-status {
+      grid-column: 2;
+      justify-self: start;
+      margin-top: -6px;
+    }
+  }
+</style>
+
+<section class="projects-page" aria-labelledby="projects-title">
+  <p class="eyebrow">Growing together</p>
+  <h1 id="projects-title">Awards &amp; Projects</h1>
+  <p class="projects-intro">A few milestones, shared efforts, and ideas taking root at Whistling Hilltop Homestead. Photos and award images can be added to the circles as they’re ready.</p>
+
+  <ul class="project-list">
+    <li class="project-item">
+      <div class="project-image-placeholder" aria-hidden="true">Image<br>coming soon</div>
+      <div class="project-copy">
+        <h2>Mass Cultural Arts Grant</h2>
+        <p>The Mass Cultural Council awarded us a small grant to support our homesteading and community culture-building events and activities.</p>
+      </div>
+      <span class="project-status">Awarded · 2026</span>
+    </li>
+
+    <li class="project-item">
+      <div class="project-image-placeholder" aria-hidden="true">Image<br>coming soon</div>
+      <div class="project-copy">
+        <h2>Hadley Chili Competition</h2>
+        <p>Charlie and Paul grew all the peppers and vegetables for their entry—and won by a landslide among fifteen entries from neighboring towns.</p>
+      </div>
+      <span class="project-status">Awarded · 2025</span>
+    </li>
+
+    <li class="project-item">
+      <div class="project-image-placeholder" aria-hidden="true">Image<br>coming soon</div>
+      <div class="project-copy">
+        <h2>A Kitchen Garden Cohort</h2>
+        <p>We’re building a lawn-to-kitchen-garden homesteading cohort, partnering with three to five families to meet quarterly, share knowledge, and create small networks of support across our diverse community.</p>
+      </div>
+      <span class="project-status">Accepting applications · 2026–2027</span>
+    </li>
+
+    <li class="project-item">
+      <div class="project-image-placeholder" aria-hidden="true">Image<br>coming soon</div>
+      <div class="project-copy">
+        <h2>Workshops &amp; Casual Events</h2>
+        <p>A short list of gatherings at Whistling Hilltop and with our neighbors.</p>
+        <ul class="project-events">
+          <li><strong>Blacksmithing Intro Workshop</strong> — November 2026</li>
+          <li><strong>Shop Night</strong> — Fridays. Bring a project; we’ll have an outdoor fire going to stay warm.</li>
+          <li><strong>Silly Stories from Whistling Hilltop</strong> — A presentation and discussion hosted at Sweetwater Hill Farm in Westhampton; prospective date: January 2027.</li>
+        </ul>
+      </div>
+      <span class="project-status">2026–2027</span>
+    </li>
+  </ul>
+</section>
