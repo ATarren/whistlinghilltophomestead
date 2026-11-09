@@ -1,20 +1,20 @@
 @font-face {
   font-family: 'Forest Home Serif';
-  src: url('/ForestHomeSerif-Regular.ttf') format('truetype');
+  src: url('../ForestHomeSerif-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Forest Home Serif';
-  src: url('/ForestHomeSerif-Bold.ttf') format('truetype');
+  src: url('../ForestHomeSerif-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Forest Home Serif';
-  src: url('/ForestHomeSerif-Italic.ttf') format('truetype');
+  src: url('../ForestHomeSerif-Italic.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
 }
