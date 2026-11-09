@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -41,7 +41,7 @@ body {
 
 .site-name {
   color: var(--ink);
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Alegreya SC', Georgia, serif;
   font-size: 1.45rem;
   font-weight: 600;
   letter-spacing: .04em;
@@ -54,6 +54,7 @@ nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  font-family: 'Alegreya SC', Georgia, serif;
   font-size: .8rem;
   font-weight: 600;
   letter-spacing: .08em;
@@ -130,7 +131,7 @@ a:hover {
 }
 
 h1, h2 {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Alegreya SC', Georgia, serif;
   font-weight: 700;
   color: var(--ink);
 }
