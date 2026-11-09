@@ -22,13 +22,38 @@ title: Welcome
   <img class="round-photo" src="{{ '/images/us.jpeg' | relative_url }}" alt="The people behind Whistling Hilltop Homestead">
 </section>
 
+{% assign latest_postcard = site.posts.first %}
+{% if latest_postcard %}
 <section class="journal-section photo-section" id="journal">
   <div class="section-copy">
-    <p class="eyebrow">Today's Postcard</p>
-    <h2>Postcards from our<br>Postage Stamp Homestead</h2>
-    <p>There’s always something happening around the homestead. Check back soon for stories, seasonal updates, and glimpses of what we’re working on.</p>
+    <p class="eyebrow">Today's Postcard · {{ latest_postcard.date | date: "%B %-d, %Y" }}</p>
+    <h2>{{ latest_postcard.title }}</h2>
+    <p>{{ latest_postcard.excerpt | strip_html }}</p>
+    <a class="button" href="{{ latest_postcard.url | relative_url }}">Read the postcard</a>
   </div>
-  <img class="round-photo" src="{{ '/images/today118.jpeg' | relative_url }}" alt="A recent view from Whistling Hilltop Homestead">
+  <img class="round-photo" src="{{ latest_postcard.image | relative_url }}" alt="{{ latest_postcard.image_alt }}">
+</section>
+{% endif %}
+
+<section class="past-postcards" id="past-postcards">
+  <p class="eyebrow">From the homestead</p>
+  <h2>Past Postcards</h2>
+  {% assign archived_postcards = site.posts | slice: 1, site.posts.size %}
+  {% if archived_postcards.size > 0 %}
+    {% for postcard in archived_postcards %}
+    <article class="journal-section photo-section archived-postcard">
+      <div class="section-copy">
+        <p class="eyebrow">{{ postcard.date | date: "%B %-d, %Y" }}</p>
+        <h2><a href="{{ postcard.url | relative_url }}">{{ postcard.title }}</a></h2>
+        <p>{{ postcard.excerpt | strip_html }}</p>
+        <a class="button" href="{{ postcard.url | relative_url }}">Read this postcard</a>
+      </div>
+      <img class="round-photo" src="{{ postcard.image | relative_url }}" alt="{{ postcard.image_alt }}">
+    </article>
+    {% endfor %}
+  {% else %}
+    <p class="archive-empty">Older postcards will appear here automatically when you publish a new one.</p>
+  {% endif %}
 </section>
 
 <section class="contact-section" id="contact">

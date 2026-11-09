@@ -198,6 +198,50 @@ h2 {
   background-repeat: no-repeat;
 }
 
+.past-postcards {
+  padding: 0 0 40px;
+}
+
+.past-postcards > h2 {
+  margin-bottom: 28px;
+}
+
+.archived-postcard {
+  margin: 0 0 28px;
+}
+
+.archived-postcard h2 a {
+  color: var(--ink);
+}
+
+.archive-empty {
+  color: var(--muted);
+}
+
+.postcard-page {
+  padding: 70px 0;
+}
+
+.postcard-page h1 {
+  margin-bottom: 24px;
+}
+
+.postcard-image {
+  display: block;
+  width: min(100%, 700px);
+  max-height: 620px;
+  margin: 28px 0;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.postcard-copy {
+  max-width: 700px;
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.8;
+}
+
 .contact-section {
   min-width: 0;
   margin-top: 8px;
@@ -322,6 +366,10 @@ footer {
   .journal-section {
     margin-inline: 0;
     padding: 40px 28px;
+  }
+
+  .archived-postcard {
+    padding: 32px 24px;
   }
 
   .contact-section {
