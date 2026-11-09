@@ -20,7 +20,6 @@ html {
 }
 
 body {
-  position: relative;
   margin: 0 auto;
   width: min(72%, 1000px);
   min-width: 320px;
@@ -29,38 +28,47 @@ body {
   font-family: 'Manrope', 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   line-height: 1.7;
-  isolation: isolate;
 }
 
-body::before {
-  content: "";
-  position: absolute;
-  z-index: -2;
-  top: 0;
-  left: 50%;
-  width: 100vw;
-  height: 560px;
-  transform: translateX(-50%);
-  background: #eaf1e4;
-  pointer-events: none;
-}
-
+/* The contour export is painted on the header and hero themselves, not behind
+   the body's background, so the transparent MassGIS PNG remains visible. */
+body::before,
 body::after {
+  content: none;
+}
+
+.site-header,
+.hero {
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+}
+
+.site-header::before,
+.hero::before {
   content: "";
   position: absolute;
   z-index: -1;
-  top: 0;
   left: 50%;
   width: 100vw;
-  height: 560px;
   transform: translateX(-50%);
-  background-image: url('https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/contours/MapServer/export?bbox=-72.75,42.235,-72.55,42.295&bboxSR=4326&imageSR=4326&size=1800,700&format=png32&transparent=true&dpi=96&layers=show:1&f=image');
-  background-position: center top;
+  background-color: #eaf1e4;
+  background-image: url("https://arcgisserver.digital.mass.gov/arcgis/rest/services/Contours3D_Elevation/MapServer/export?bbox=837000%2C927000%2C860000%2C935000&bboxSR=26986&imageSR=26986&size=1800%2C626&format=png32&transparent=true&layers=show%3A1&f=image");
   background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.46;
-  filter: saturate(0.85) brightness(1.02);
+  background-size: 100vw 560px;
   pointer-events: none;
+}
+
+.site-header::before {
+  top: 0;
+  height: 100%;
+  background-position: center top;
+}
+
+.hero::before {
+  top: 0;
+  height: 100%;
+  background-position: center -62px;
 }
 
 .site-header {
@@ -366,15 +374,6 @@ footer {
     margin: 0 clamp(16px, 5vw, 22px);
   }
 
-  body::before,
-  body::after {
-    height: 620px;
-  }
-
-  body::after {
-    background-size: auto 620px;
-  }
-
   .site-header {
     align-items: flex-start;
     flex-direction: column;
@@ -400,6 +399,15 @@ footer {
   .hero {
     min-height: 0;
     padding: 60px 0;
+  }
+
+  .site-header::before,
+  .hero::before {
+    background-size: auto 620px;
+  }
+
+  .hero::before {
+    background-position: center -88px;
   }
 
   .journal-section {
