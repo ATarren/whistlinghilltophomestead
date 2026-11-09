@@ -32,6 +32,7 @@
   --accent: #a77c62;
   --accent-deep: #6d5447;
   --soft-rose: #efe0d5;
+  --map-back: #e8ebe2;
 }
 
 html {
@@ -60,7 +61,7 @@ body::before {
   width: 100vw;
   height: 560px;
   transform: translateX(-50%);
-  background: #eaf1e4;
+  background: var(--map-back);
   pointer-events: none;
 }
 
@@ -78,7 +79,8 @@ body::after {
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.46;
-  filter: saturate(0.85) brightness(1.02);
+  /* Flattens the contour lines to black, then tints them sage (#72775d). */
+  filter: brightness(0) saturate(100%) invert(47%) sepia(14%) saturate(620%) hue-rotate(32deg) brightness(92%) contrast(88%);
   pointer-events: none;
 }
 
