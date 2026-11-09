@@ -1,25 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
-
-@font-face {
-  font-family: 'Forest Home Serif';
-  src: url('https://raw.githubusercontent.com/ATarren/whistlinghilltophomestead/main/ForestHomeSerif-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Forest Home Serif';
-  src: url('https://raw.githubusercontent.com/ATarren/whistlinghilltophomestead/main/ForestHomeSerif-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Forest Home Serif';
-  src: url('https://raw.githubusercontent.com/ATarren/whistlinghilltophomestead/main/ForestHomeSerif-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-}
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -34,7 +13,6 @@
   --accent: #a77c62;
   --accent-deep: #6d5447;
   --soft-rose: #efe0d5;
-  --map-back: #e8ebe2;
 }
 
 html {
@@ -43,31 +21,18 @@ html {
 
 body {
   position: relative;
+  isolation: isolate;
   margin: 0 auto;
   width: min(72%, 1000px);
   min-width: 320px;
   color: var(--ink);
   background: var(--paper);
-  font-family: 'Lora', Georgia, serif;
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   line-height: 1.7;
-  isolation: isolate;
 }
 
 body::before {
-  content: "";
-  position: absolute;
-  z-index: -2;
-  top: 0;
-  left: 50%;
-  width: 100vw;
-  height: 560px;
-  transform: translateX(-50%);
-  background: var(--map-back);
-  pointer-events: none;
-}
-
-body::after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -76,12 +41,11 @@ body::after {
   width: 100vw;
   height: 560px;
   transform: translateX(-50%);
-  background-image: url('https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/contours/MapServer/export?bbox=-72.75,42.235,-72.55,42.295&bboxSR=4326&imageSR=4326&size=1800,700&for[...]
+  background-color: #edf3e8;
+  background-image: url('../images/topographic-lines.svg');
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.46;
-  filter: hue-rotate(-20deg) saturate(1.2) brightness(1.05);
   pointer-events: none;
 }
 
@@ -96,9 +60,9 @@ body::after {
 
 .site-name {
   color: var(--ink);
-  font-family: 'Forest Home Serif', Georgia, serif;
+  font-family: 'Alegreya SC', Georgia, serif;
   font-size: 1.45rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: .04em;
 }
 
@@ -109,9 +73,9 @@ nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  font-family: 'Forest Home Serif', Georgia, serif;
+  font-family: 'Alegreya SC', Georgia, serif;
   font-size: .8rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
@@ -162,8 +126,31 @@ a:hover {
   text-transform: uppercase;
 }
 
+.hero .section-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero .section-copy h1 {
+  order: 1;
+}
+
+.hero .section-copy .eyebrow {
+  order: 2;
+  margin: 16px 0 0;
+}
+
+.hero .section-copy .intro {
+  order: 3;
+}
+
+.hero .section-copy .button {
+  order: 4;
+  align-self: flex-start;
+}
+
 h1, h2 {
-  font-family: 'Forest Home Serif', Georgia, serif;
+  font-family: 'Alegreya SC', Georgia, serif;
   font-weight: 700;
   color: var(--ink);
 }
@@ -234,6 +221,11 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.12);
+}
+
+/* Reserve room so the decorative stamp never sits on top of postcard text. */
+.journal-section .section-copy {
+  padding-right: 64px;
 }
 
 .journal-section::after {
@@ -389,12 +381,8 @@ footer {
     margin: 0 clamp(16px, 5vw, 22px);
   }
 
-  body::before,
-  body::after {
+  body::before {
     height: 620px;
-  }
-
-  body::after {
     background-size: auto 620px;
   }
 
@@ -428,6 +416,10 @@ footer {
   .journal-section {
     margin-inline: 0;
     padding: 40px 28px;
+  }
+
+  .journal-section .section-copy {
+    padding: 56px 0 0;
   }
 
   .postcard-detail {
