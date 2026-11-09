@@ -127,6 +127,10 @@ h2 {
   line-height: 0.82;
 }
 
+#homestead h2 {
+  line-height: 0.72;
+}
+
 .intro {
   max-width: 590px;
   margin: 24px 0 28px;
