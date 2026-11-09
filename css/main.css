@@ -244,9 +244,11 @@ h2 {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-  gap: 32px;
+  grid-template-columns: 1fr;
+  gap: 24px;
   align-items: start;
+  max-width: 700px;
+  margin: 0 auto;
   min-width: 0;
 }
 
@@ -258,7 +260,8 @@ h2 {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 10px;
-  width: 100%;
+  width: min(100%, 620px);
+  margin: 0 auto;
   min-width: 0;
 }
 
@@ -294,7 +297,7 @@ h2 {
 }
 
 .contact-form .button {
-  justify-self: start;
+  justify-self: center;
   max-width: 100%;
   margin-top: 8px;
 }
@@ -303,6 +306,7 @@ h2 {
   margin: 0;
   color: var(--muted);
   font-size: .85rem;
+  text-align: center;
 }
 
 .content-section p:not(.eyebrow), .journal-section p:not(.eyebrow), .contact-section p:not(.eyebrow) {
