@@ -61,10 +61,10 @@ a:hover {
   text-underline-offset: 4px;
 }
 
-/* Place each section's copy beside a circular photo. */
+/* Give all three sections identical image columns and spacing. */
 .photo-section {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(190px, 300px);
+  grid-template-columns: minmax(0, 1fr) 300px;
   align-items: center;
   gap: clamp(28px, 5vw, 64px);
 }
@@ -81,8 +81,8 @@ a:hover {
 
 .round-photo {
   display: block;
-  width: 100%;
-  aspect-ratio: 1;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center center;
@@ -145,10 +145,10 @@ h1 {
   border-bottom: 1px solid var(--line);
 }
 
-/* Rounded postcard frame around the Notes from Home section. */
+/* Wider postcard frame keeps its photo aligned with the other section photos. */
 .journal-section {
   position: relative;
-  margin: 0 0 70px;
+  margin: 0 -48px 70px;
   padding: 48px;
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -215,6 +215,7 @@ footer {
 
   .round-photo {
     width: min(72vw, 300px);
+    height: min(72vw, 300px);
     justify-self: center;
   }
 
@@ -224,6 +225,7 @@ footer {
   }
 
   .journal-section {
+    margin-inline: 0;
     padding: 40px 28px;
   }
 }
