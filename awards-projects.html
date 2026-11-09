@@ -4,6 +4,12 @@ title: Awards & Projects
 permalink: /awards-projects/
 ---
 <style>
+  /* Keep the page heading area cream; start the contour treatment below the intro divider. */
+  body::before,
+  body::after {
+    display: none;
+  }
+
   .projects-page {
     padding: 64px 0 48px;
   }
@@ -25,10 +31,31 @@ permalink: /awards-projects/
   }
 
   .project-list {
+    position: relative;
+    isolation: isolate;
     margin: 0;
     padding: 0;
     list-style: none;
     border-top: 1px solid var(--line);
+  }
+
+  .project-list::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background-color: var(--map-back, #e8ebe2);
+    background-image: url('https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/contours/MapServer/export?bbox=-72.75,42.235,-72.55,42.295&bboxSR=4326&imageSR=4326&size=1800,700&format=png32&transparent=true&layers=show:0&f=image');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100vw 560px;
+    opacity: .46;
+    filter: brightness(0) saturate(100%) invert(47%) sepia(14%) saturate(620%) hue-rotate(32deg) brightness(92%) contrast(88%);
+    pointer-events: none;
   }
 
   .project-item {
@@ -98,6 +125,10 @@ permalink: /awards-projects/
   @media (max-width: 600px) {
     .projects-page {
       padding-top: 44px;
+    }
+
+    .project-list::before {
+      background-size: auto 620px;
     }
 
     .project-item {
