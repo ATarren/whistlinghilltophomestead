@@ -30,3 +30,40 @@ title: Welcome
   </div>
   <img class="round-photo" src="{{ '/images/today118.jpeg' | relative_url }}" alt="A recent view from Whistling Hilltop Homestead">
 </section>
+
+<section class="contact-section" id="contact">
+  <p class="eyebrow">Get in touch</p>
+  <h2>Say hello</h2>
+  <div class="contact-grid">
+    <div>
+      <p>We’d love to hear from you—whether you’re sharing a gardening tip, asking a question, or just saying hello.</p>
+      <p>You can also email us at <a href="mailto:easthillhomestead60@gmail.com">easthillhomestead60@gmail.com</a>.</p>
+    </div>
+    <form class="contact-form" id="contact-form">
+      <label for="contact-name">Name</label>
+      <input id="contact-name" name="name" type="text" autocomplete="name" required>
+
+      <label for="contact-email">Email</label>
+      <input id="contact-email" name="email" type="email" autocomplete="email" required>
+
+      <label for="contact-message">Message</label>
+      <textarea id="contact-message" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="button">Send a message</button>
+      <p class="form-note">Your email app will open with the message ready to send.</p>
+    </form>
+  </div>
+</section>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const subject = 'Message from ' + form.elements.name.value;
+    const body = 'Name: ' + form.elements.name.value + '\n' +
+      'Email: ' + form.elements.email.value + '\n\n' +
+      form.elements.message.value;
+    window.location.href = 'mailto:easthillhomestead60@gmail.com?subject=' +
+      encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
+</script>

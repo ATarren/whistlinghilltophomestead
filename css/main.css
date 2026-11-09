@@ -147,11 +147,13 @@ h2 {
   border: 1px solid var(--accent-deep);
   border-radius: 999px;
   color: var(--accent-deep);
+  font: inherit;
   font-size: .82rem;
   font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
   background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
 }
 
 .button:hover {
@@ -160,7 +162,7 @@ h2 {
   text-decoration: none;
 }
 
-.content-section, .journal-section {
+.content-section, .journal-section, .contact-section {
   max-width: none;
   padding: 70px 0;
 }
@@ -196,7 +198,60 @@ h2 {
   background-repeat: no-repeat;
 }
 
-.content-section p:not(.eyebrow), .journal-section p:not(.eyebrow) {
+.contact-section {
+  margin-top: 8px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.contact-form {
+  display: grid;
+  gap: 10px;
+}
+
+.contact-form label {
+  margin-top: 8px;
+  color: var(--ink);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  color: var(--ink);
+  font: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid rgba(114, 119, 93, 0.25);
+  border-color: var(--sage);
+}
+
+.contact-form .button {
+  justify-self: start;
+  margin-top: 8px;
+}
+
+.form-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+.content-section p:not(.eyebrow), .journal-section p:not(.eyebrow), .contact-section p:not(.eyebrow) {
   color: var(--muted);
   font-size: 1.04rem;
   line-height: 1.8;
@@ -225,7 +280,8 @@ footer {
     gap: 16px;
   }
 
-  .photo-section {
+  .photo-section,
+  .contact-grid {
     grid-template-columns: 1fr;
     gap: 28px;
   }
