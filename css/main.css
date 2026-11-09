@@ -218,28 +218,21 @@ h2 {
   color: var(--muted);
 }
 
-.postcard-page {
-  padding: 70px 0;
-}
-
-.postcard-page h1 {
-  margin-bottom: 24px;
-}
-
-.postcard-image {
-  display: block;
-  width: min(100%, 700px);
-  max-height: 620px;
-  margin: 28px 0;
-  border-radius: 14px;
-  object-fit: cover;
+.postcard-detail {
+  margin-top: 40px;
 }
 
 .postcard-copy {
   max-width: 700px;
+  margin-bottom: 24px;
   color: var(--muted);
   font-size: 1.04rem;
   line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.postcard-copy p {
+  margin: 0;
 }
 
 .contact-section {
@@ -366,6 +359,11 @@ footer {
   .journal-section {
     margin-inline: 0;
     padding: 40px 28px;
+  }
+
+  .postcard-detail {
+    margin-top: 28px;
+    padding: 32px 24px;
   }
 
   .archived-postcard {
