@@ -32,6 +32,7 @@
   --accent: #a77c62;
   --accent-deep: #6d5447;
   --soft-rose: #efe0d5;
+  --map-back: #e8ebe2;
 }
 
 html {
@@ -60,7 +61,7 @@ body::before {
   width: 100vw;
   height: 560px;
   transform: translateX(-50%);
-  background: #eaf1e4;
+  background: var(--map-back);
   pointer-events: none;
 }
 
@@ -73,12 +74,12 @@ body::after {
   width: 100vw;
   height: 560px;
   transform: translateX(-50%);
-  background-image: url('https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/contours/MapServer/export?bbox=-72.75,42.235,-72.55,42.295&bboxSR=4326&imageSR=4326&size=1800,700&format=png32&transparent=true&layers=show:0&f=image');
+  background-image: url('https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/contours/MapServer/export?bbox=-72.75,42.235,-72.55,42.295&bboxSR=4326&imageSR=4326&size=1800,700&for[...]
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.46;
-  filter: saturate(0.85) brightness(1.02);
+  filter: hue-rotate(-20deg) saturate(1.2) brightness(1.05);
   pointer-events: none;
 }
 
