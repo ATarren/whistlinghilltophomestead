@@ -1,6 +1,8 @@
 # Jekyll site settings for Whistling Hilltop Homestead.
 # Change the name below to change the site name displayed in the shared header and page titles.
 name: Whistling Hilltop Homestead
+# GitHub Pages project-site path, used by the relative_url filter for images and assets.
+baseurl: /whistlinghilltophomestead
 # Markdown processor used by Jekyll for posts and pages.
 markdown: kramdown
 # URL format for posts placed in the _posts folder. Change only if you want a different post URL structure.
