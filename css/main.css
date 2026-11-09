@@ -30,8 +30,6 @@ body {
   line-height: 1.7;
 }
 
-/* The contour export is painted on the header and hero themselves, not behind
-   the body's background, so the transparent MassGIS PNG remains visible. */
 body::before,
 body::after {
   content: none;
@@ -53,22 +51,22 @@ body::after {
   width: 100vw;
   transform: translateX(-50%);
   background-color: #eaf1e4;
-  background-image: url("https://arcgisserver.digital.mass.gov/arcgis/rest/services/Contours3D_Elevation/MapServer/export?bbox=837000%2C927000%2C860000%2C935000&bboxSR=26986&imageSR=26986&size=1800%2C626&format=png32&transparent=true&layers=show%3A1&f=image");
+  background-image: url("https://arcgisserver.digital.mass.gov/arcgis/rest/services/Contours3D_Elevation/MapServer/export?bbox=837000,927000,860000,935000&bboxSR=26986&imageSR=26986&size=1800,626&format=png32&transparent=true&layers=show:1&f=image");
   background-repeat: no-repeat;
+  background-position: center top;
   background-size: 100vw 560px;
+  opacity: 0.55;
   pointer-events: none;
 }
 
 .site-header::before {
   top: 0;
   height: 100%;
-  background-position: center top;
 }
 
 .hero::before {
   top: 0;
   height: 100%;
-  background-position: center -62px;
 }
 
 .site-header {
@@ -145,6 +143,29 @@ a:hover {
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
+}
+
+.hero .section-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero .section-copy h1 {
+  order: 1;
+}
+
+.hero .section-copy .eyebrow {
+  order: 2;
+  margin: 16px 0 0;
+}
+
+.hero .section-copy .intro {
+  order: 3;
+}
+
+.hero .section-copy .button {
+  order: 4;
+  align-self: flex-start;
 }
 
 h1, h2 {
@@ -237,43 +258,6 @@ h2 {
   background-size: 26px 15px, 26px 15px;
   background-position: center 18px, center 25px;
   background-repeat: no-repeat;
-}
-
-.past-postcards {
-  padding: 0 0 40px;
-}
-
-.past-postcards > h2 {
-  margin-bottom: 28px;
-}
-
-.archived-postcard {
-  margin: 0 0 28px;
-}
-
-.archived-postcard h2 a {
-  color: var(--ink);
-}
-
-.archive-empty {
-  color: var(--muted);
-}
-
-.postcard-detail {
-  margin-top: 40px;
-}
-
-.postcard-copy {
-  max-width: 700px;
-  margin-bottom: 24px;
-  color: var(--muted);
-  font-size: 1.04rem;
-  line-height: 1.8;
-  overflow-wrap: anywhere;
-}
-
-.postcard-copy p {
-  margin: 0;
 }
 
 .contact-section {
@@ -374,6 +358,11 @@ footer {
     margin: 0 clamp(16px, 5vw, 22px);
   }
 
+  .site-header::before,
+  .hero::before {
+    background-size: auto 620px;
+  }
+
   .site-header {
     align-items: flex-start;
     flex-direction: column;
@@ -401,27 +390,9 @@ footer {
     padding: 60px 0;
   }
 
-  .site-header::before,
-  .hero::before {
-    background-size: auto 620px;
-  }
-
-  .hero::before {
-    background-position: center -88px;
-  }
-
   .journal-section {
     margin-inline: 0;
     padding: 40px 28px;
-  }
-
-  .postcard-detail {
-    margin-top: 28px;
-    padding: 32px 24px;
-  }
-
-  .archived-postcard {
-    padding: 32px 24px;
   }
 
   .contact-section {
