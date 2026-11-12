@@ -6,7 +6,6 @@ image: /images/us.jpeg
 image_alt: The people behind Whistling Hilltop Homestead
 excerpt: From the stockpot to social justice, we ask whether the broth of our homestead vision stands up, and share plans for a 2027 postage stamp homestead cohort.
 ---
----
 Above all, we do a lot of cooking in our household. My husband calls the kitchen the engine of the house, and we both firmly believe there should always be a pot of something on the stove, or at least within reach in the fridge, ready to share with anyone stopping by. We love it when neighbors, friends, and family let us know they’ll be in the area and want to swing through.
 
 At the heart of many of the recipes we make (and by "we," I mean Paul) is a really strong stock. Our dear friend Jaylin once said that a stock is only good enough if you can punch it when it’s cooled and it still stands up. Of course, what this means is that it’s full of good collagen and structure from the different parts of a slow-cooked bird or beast. We’ve specialized in two kinds of stock: pork, from the pigs we help slaughter at Sweetwater Hill in Westhampton every fall, and chicken, which we source locally, though we hope to venture into raising meat birds this coming year. This fall, we’ve also been leaning into herbal Chinese soups.
